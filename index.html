@@ -1,121 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer type="text/javascript" src="code.js"></script>
-    <h1 id="pokemon-logo" src="?">POKEMON</h1>
-</head>
-
-<body>
-    <div class="container">
-        <h3> Select Team</h3>
-        <div id="team-selection">
-            <form>Party Pokemon1</form>
-            <form>Party Pokemon2</form>
-            <form>Party Pokemon3</form>
-            <form>Party Pokemon4</form>
-            <form>Party Pokemon5</form>
-            <form>Party Pokemon6</form>
-            <button type="submit">GO</button>
-        </div>
-        <div id="my-team-list">
-            <h2>Select Team</h2>
-            <div id="pokemon-1/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pokemon</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer type="text/javascript" src="code.js"></script>
+    </head>
+    <body>
+        <h1 id="pokemon-logo" src="?">POKEMON</h1>
+        <div class="container">
+            <h3> Select Team</h3>
+            <form id="pokeform" class="pokeform">
+                <input type="text" name="comment" id="comment" placeholder="Type a pokemon name..." class="pokeform-input"/>
+                <button type="submit" class="pokeform-button">GO</button>
+            </form>
+            <h2>Team</h2>
+            <div id="team-list">
+                <div id="pokemon-number" class="pokemonObj">
+                    <p>pokemon name</p>
+                    <img src="http://placehold.it/" alt="pokemon-name" />
                     <ol class="pokemon-type">
                         <li>type1</li>
                         <li>type2</li>
                     </ol>
                 </div>
-                <p>pokemon name</p>
-            </div>
-            <div id="pokemon-2/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
-                <p>pokemon name</p>
-            </div>
-            <div id="pokemon-3/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
-                <p>pokemon name</p>
-            </div>
-            <div id="pokemon-4/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
-                <p>pokemon name</p>
-            </div>
-            <div id="pokemon-5/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
-                <p>pokemon name</p>
-            </div>
-            <div id="pokemon-6/6" class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
-                <p>pokemon name</p>
             </div>
         </div>
-        <div id="opponent-mon">
-            <h2>Opponent Pokemon</h2>
-            <div class="pokemonObj">
-                <img src="http://placehold.it/" alt="pokemon-name" />
-                <div id="pokemon-info">
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                    <span class="type-weakness">Weaknesses</span>
-                </div>
-                <p>pokemon name</p>
+            <div id="opponent-mon">
+                <h2>Opponent Pokemon</h2>
+                <!--Make opponent with pokemon creator -->
+            </div>
+            <div id="winning mon">
+                <h2>Winning Pokemon</h2>
+                <!--Make winning with pokemon creator -->
             </div>
         </div>
-    </div>
-    <div id="winning mon">
-        <h2>Winning Pokemon</h2>
-        <div class="pokemonObj">
-            <img src="http://placehold.it/" alt="pokemon-name" />
-            <div id="pokemon-info">
-                <ol class="pokemon-type">
-                    <li>type1</li>
-                    <li>type2</li>
-                </ol>
-                <span class="type-weakness">Weaknesses</span>
-            </div>
-            <p>pokemon name</p>
-        </div>
-    </div>
-    </div>
-</body>
-
+    </body>
 </html>
