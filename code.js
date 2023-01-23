@@ -33,28 +33,30 @@ const pokeForm = document.querySelector("#pokeform")
 const pokeRoster = document.querySelector("#team-list")
 pokeForm.addEventListener("submit", (event) => {
     event.preventDefault()
+
     const pokeDiv = document.createElement('div')
     pokeDiv.setAttribute('id', 'pokeNumber')
     pokeDiv.setAttribute('class', 'pokemonObj')
+
     const pokeName = document.createElement('p')
     pokeName.textContent = pokemonName
+    //pokeName.appendChild(pokeChild)
+
     const pokePic = document.createElement('img')
     pokePic.setAttribute('src', "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png")
     pokePic.setAttribute('alt', pokemonName)
+
     const pokeType = document.createElement('ol')
     pokeType.setAttribute('class', "pokemon-type")
-    
 
+    let pokeTypes = document.createElement('li')
+    pokeTypes.textContent = "water"
+    pokeType.appendChild(pokeTypes)
+    pokeTypes = document.createElement('li')
+    pokeTypes.textContent = "grass"
+    pokeType.appendChild(pokeTypes)
 
-
-
-
-
-
-
-
-
-
+    pokeDiv.append(pokeName, pokePic, pokeType)
     pokeRoster.append(pokeDiv)
 
 });
