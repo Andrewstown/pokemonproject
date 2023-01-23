@@ -6,14 +6,9 @@ const teamList = document.querySelector("#team-list")
 test()
 function test(){
     let num = 0
+    let stop = 0
     while (num < teamPokemonNumber){
-        fetch('https://example.com/profile', {
-            method: 'POST', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
+        fetch('https://example.com/profile')
         .then((response) => response.json())
         .then((data) => { //pokemon name url resolves
             num++
@@ -22,8 +17,12 @@ function test(){
             */
             console.log('Success:', data);
         })
-        .catch((error) => { //pokemon name url fails
+        .catch((error) => {
             console.error('Error:', error);
-        });
+        })
+        stop++
+        if (stop == 10){
+            num = teamPokemonNumber
+        }
     }
 }
