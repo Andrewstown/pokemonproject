@@ -28,6 +28,7 @@
 //     }
 // }
 
+const pokemonName = "pikachu"
 const pokeForm = document.querySelector("#pokeform")
 const pokeRoster = document.querySelector("#team-list")
 pokeForm.addEventListener("submit", (event) => {
@@ -36,7 +37,20 @@ pokeForm.addEventListener("submit", (event) => {
     pokeDiv.setAttribute('id', 'pokeNumber')
     pokeDiv.setAttribute('class', 'pokemonObj')
     const pokeName = document.createElement('p')
-    pokeName.textContent = pokemon.name
+    pokeName.textContent = pokemonName
+    const pokePic = document.createElement('img')
+    pokePic.setAttribute('src', "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png")
+    pokePic.setAttribute('alt', pokemonName)
+    const pokeType = document.createElement('ol')
+    pokeType.setAttribute('class', "pokemon-type")
+    
+
+
+
+
+
+
+
 
 
 
