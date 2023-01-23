@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pokemon</title>
-        <link rel="stylesheet" href="style.css">
-        <script defer type="text/javascript" src="code.js"></script>
-    </head>
-    <body>
-        <h1 id="pokemon-logo" src="?">POKEMON</h1>
-        <div class="container">
-            <h3> Select Team</h3>
-            <form id="pokeform" class="pokeform">
-                <input type="text" name="comment" id="comment" placeholder="Type a pokemon name..." class="pokeform-input"/>
-                <button type="submit" class="pokeform-button">GO</button>
-            </form>
-            <h2>Team</h2>
-            <div id="team-list">
-                <div id="pokemon-number" class="pokemonObj">
-                    <p>pokemon name</p>
-                    <img src="http://placehold.it/" alt="pokemon-name" />
-                    <ol class="pokemon-type">
-                        <li>type1</li>
-                        <li>type2</li>
-                    </ol>
-                </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer type="text/javascript" src="code.js"></script>
+</head>
+
+<body>
+    <h1 id="pokemon-logo" src="?">POKEMON</h1>
+    <div class="container">
+        <h3> Select Team</h3>
+        <form id="pokeform" class="pokeform">
+            <input type="text" name="pokeInput" placeholder="Type a pokemon name..." class="pokeform-input" />
+            <button type="submit" class="pokeform-button">GO</button>
+        </form>
+        <h2>Team</h2>
+        <div id="team-list">
+            <div id="pokemon-number" class="pokemonObj">
+                <p>pokemon name</p>
+                <img src="http://placehold.it/" alt="pokemon-name" />
+                <ol class="pokemon-type">
+                    <li>type1</li>
+                    <li>type2</li>
+                </ol>
             </div>
         </div>
-            <div id="opponent-mon">
-                <h2>Opponent Pokemon</h2>
-                <!--Make opponent with pokemon creator -->
-            </div>
-            <div id="winning mon">
-                <h2>Winning Pokemon</h2>
-                <!--Make winning with pokemon creator -->
-            </div>
-        </div>
-    </body>
+    </div>
+    <div id="opponent-mon">
+        <h2>Opponent Pokemon</h2>
+        <!--Make opponent with pokemon creator -->
+    </div>
+    <div id="winning mon">
+        <h2>Winning Pokemon</h2>
+        <!--Make winning with pokemon creator -->
+    </div>
+    </div>
+</body>
+
 </html>
