@@ -2,10 +2,12 @@ h1 {
     color: rgba(233, 186, 13, 0.563);
     
 }
+
 img {
     height: 120px;
     margin:auto;
 }
+
 body {
     padding: 1rem;
     text-align: center;
@@ -14,13 +16,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
+
 ol {
     margin-right: 0;
 }
+
 #team-list {
-    display: inline
+    position: relative;
 }
+
 div.pokemon-obj {
+    position: relative;
     display: inline-block;
+    vertical-align: top;
+}
+
+input#pokeform-input{
+    border-color: yellow;
 }
