@@ -26,12 +26,13 @@ ol {
     position: relative;
 }
 
-div.pokemon-obj {
+div.pokemon-obj,
+div.pokemon-objop {
     position: relative;
     display: inline-block;
     vertical-align: top;
 }
 
-input#pokeform-input{
+input.pokeform-input{
     border-color: yellow;
 }
