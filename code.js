@@ -45,6 +45,7 @@ pokeForm.addEventListener("submit", (event) => {
     const pokePic = document.createElement('img')
     pokePic.setAttribute('src', "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png")
     pokePic.setAttribute('alt', pokemonName)
+    pokePic.setAttribute('class', 'pokemonName')
 
     const pokeType = document.createElement('ol')
     pokeType.setAttribute('class', "pokemon-type")
