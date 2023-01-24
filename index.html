@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pokemon</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script defer type="text/javascript" src="code.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <script defer type="text/javascript" src="code.js"></script>
-</head>
+    <body>
+        <img class="pokeLogo" src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png">
+        <div class="container">
+            <h3> Select Team</h3>
+            <form id="pokeform" class="pokeform">
+                <input type="text" name="pokeInput" placeholder="Type a pokemon name..." class="pokeform-input" />
+                <button type="submit" class="pokeform-button">GO</button>
+            </form>
+            
+            <h2>Team</h2>
+            <div id="team-list">
 
-<body>
-   
-    <img class="pokeLogo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRopkAcoVWqFmYcT_buL07ukrdLurPdUN7ckYvz4tf&s">
-    <div class="container">
-        <h3> Select Team</h3>
-        <form id="pokeform" class="pokeform">
-            <input type="text" name="pokeInput" placeholder="Type a pokemon name..." class="pokeform-input" />
-            <button type="submit" class="pokeform-button">GO</button>
-        </form>
-        <h2>Team</h2>
-        <div id="team-list">
+            </div>
 
+            <div id="opponent-mon">
+                <h2>Opponent Pokemon</h2>
+                <!--Make opponent with pokemon creator -->
+            </div>
+
+            <div id="winning mon">
+                <h2>Winning Pokemon</h2>
+                <!--Make winning with pokemon creator -->
+            </div>
         </div>
-    </div>
-    <div id="opponent-mon">
-        <h2>Opponent Pokemon</h2>
-        <!--Make opponent with pokemon creator -->
-    </div>
-    <div id="winning mon">
-        <h2>Winning Pokemon</h2>
-        <!--Make winning with pokemon creator -->
-    </div>
-    </div>
-</body>
-
+    </body>
 </html>

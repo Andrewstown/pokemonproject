@@ -1,63 +1,54 @@
-// submit 6 Pokemon Characters if each character value is True 
+let team = []
+let teamSize = 1
 
-// let teamPokemonNumber = 1 //0 by default
-// const teamList = document.querySelector("#team-list")
-
-// test()
-// function test() {
-
-//     let pokeName = "Pikachu"
-//     while (num < teamPokemonNumber) {
-//         fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName.toLowerCase()}`)
-//             .then(response => response.json())
-//             .then(data => {
-//                 num++
-//                 console.log(data)
-//                 /*
-//                 logic for making html pokemon
-//                 */
-//                 console.log('Success:', data);
-//             })
-//             .catch((error) => {
-//                 console.error('Error:', error);
-//             })
-//         stop++
-//         if (stop == 10) {
-//             num = teamPokemonNumber
-//         }
-//     }
-// }
-
-const pokemonName = "pikachu"
 const pokeForm = document.querySelector("#pokeform")
-const pokeRoster = document.querySelector("#team-list")
-pokeForm.addEventListener("submit", (event) => {
+const pokeTeam = document.querySelector("#team-list")
+
+function captialize(str){
+    return str.substring(0, 1).toUpperCase() + str.substring(1, str.length)
+}
+
+pokeForm.addEventListener("submit", event => {
     event.preventDefault()
 
-    const pokeDiv = document.createElement('div')
-    pokeDiv.setAttribute('id', 'pokeNumber')
-    pokeDiv.setAttribute('class', 'pokemonObj')
+    let poke = event.target.pokeInput.value.toLowerCase()
+    event.target.pokeInput.value = ''
+    fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
+    .then(response => response.json())
+    .then(data => {
+        let pokemon = {
+            name: captialize(poke),
+            image: data.sprites.front_default,
+            types: []
+        }
 
-    const pokeName = document.createElement('p')
-    pokeName.textContent = pokemonName
-    //pokeName.appendChild(pokeChild)
+        const pokeDiv = document.createElement('div')
+        pokeDiv.setAttribute('id', `pokeNum${teamSize}`)
+        pokeDiv.setAttribute('class', 'pokemon-obj')
 
-    const pokePic = document.createElement('img')
-    pokePic.setAttribute('src', "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png")
-    pokePic.setAttribute('alt', pokemonName)
-    pokePic.setAttribute('class', 'pokemonName')
+        const pokeName = document.createElement('p')
+        pokeName.textContent = pokemon.name
 
-    const pokeType = document.createElement('ol')
-    pokeType.setAttribute('class', "pokemon-type")
+        const pokePic = document.createElement('img')
+        pokePic.setAttribute('src', `${pokemon.image}`)
+        pokePic.setAttribute('alt', pokemon.name)
 
-    let pokeTypes = document.createElement('li')
-    pokeTypes.textContent = "water"
-    pokeType.appendChild(pokeTypes)
-    pokeTypes = document.createElement('li')
-    pokeTypes.textContent = "grass"
-    pokeType.appendChild(pokeTypes)
+        const pokeType = document.createElement('ol')
 
-    pokeDiv.append(pokeName, pokePic, pokeType)
-    pokeRoster.append(pokeDiv)
+        data.types.forEach(element => {
+            let type = element.type.name
+            pokemon.types.push(type)
+            let pokeTypes = document.createElement('li')
+            pokeTypes.textContent = captialize(type)
+            pokeType.appendChild(pokeTypes)
+        })
 
+        team.push(pokemon)
+        pokeDiv.append(pokeName, pokePic, pokeType)
+        pokeTeam.append(pokeDiv)
+    })
+    .catch(error => {
+        event.target.pokeInput.value = ''
+        console.error('Error:', error);
+    })
 });
