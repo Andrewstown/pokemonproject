@@ -48,10 +48,7 @@ pokeForm.addEventListener("submit", event => {
         pokeTeam.append(pokeDiv)
     })
     .catch(error => {
-        let errorMsg = event.target.pokeInput
-        errorMsg.style.borderColor = "red"
-        errorMsg.style.color = "darkred"
-        errorMsg.value = "Not a Pokemon!"
+        event.target.pokeInput.value = ''
         console.error('Error:', error);
     })
 });
