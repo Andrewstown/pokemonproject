@@ -3,9 +3,21 @@ let teamSize = 1
 let editTeam = true
 let opponent = {}
 
+const numberInput = document.querySelector("#team-number")
 const pokeForm = document.querySelector('#pokeform')
 const pokeInput = pokeForm.querySelector('input')
 const pokeSelect = document.querySelector('#select')
+
+numberInput.addEventListener("wheel", (event) => {
+    let scrollIndx = 0
+    const y = event.deltaY;
+    if (y > 0) {
+        scrollIndx++;
+    } else {
+        scrollIndx--;
+
+    }
+})
 
 pokeForm.addEventListener("submit", event => {
     event.preventDefault()

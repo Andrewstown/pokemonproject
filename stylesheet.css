@@ -16,6 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Pokemon Solid', sans-serif;
 }
 
 ol {
