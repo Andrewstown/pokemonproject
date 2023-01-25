@@ -25,7 +25,8 @@ ol {
 }
 
 div.pokemon-obj,
-div.pokemon-objop {
+div.pokemon-objop,
+div.pokemon-objwin {
     position: relative;
     display: inline-block;
     vertical-align: top;

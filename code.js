@@ -1,23 +1,18 @@
 let team = []
+let effect = {}
 let teamSize = 1
 let editTeam = true
 let opponent = {}
 
-const numberInput = document.querySelector("#team-number")
+const winDiv = document.querySelector('.pokemon-objwin')
 const pokeForm = document.querySelector('#pokeform')
 const pokeInput = pokeForm.querySelector('input')
 const pokeSelect = document.querySelector('#select')
+const numberInput = document.querySelector("#team-number")
 
-numberInput.addEventListener("wheel", (event) => {
-    let scrollIndx = 0
-    const y = event.deltaY;
-    if (y > 0) {
-        scrollIndx++;
-    } else {
-        scrollIndx--;
-
-    }
-})
+fetch('https://pogoapi.net/api/v1/type_effectiveness.json')
+.then(r => r.json())
+.then(data => effect = data)
 
 pokeForm.addEventListener("submit", event => {
     event.preventDefault()
@@ -45,7 +40,7 @@ pokeForm.addEventListener("submit", event => {
         pokeName.textContent = pokemon.name
 
         const pokePic = document.createElement('img')
-        pokePic.setAttribute('src', `${pokemon.image ? pokemon.image : "https://static.wikia.nocookie.net/pokemon/images/e/e3/No_Image.png/revision/latest?cb=20211113135653"}`)
+        pokePic.setAttribute('src', `${pokemon.image ? pokemon.image : "https://static.wikia.nocookie.net/bec6f033-936d-48c5-9c1e-7fb7207e28af/scale-to-width/755"}`)
         pokePic.setAttribute('alt', pokemon.name)
 
         const pokeType = document.createElement('ul')
@@ -72,7 +67,8 @@ pokeForm.addEventListener("submit", event => {
             pokeRemove.addEventListener('click', () => {
                 team.splice(parseInt(pokeDiv.id.charAt(pokeDiv.id.length - 1)) - 1, 1)
                 pokeDiv.remove()
-                changeEdit(parseInt(document.querySelector("input#team-number").value))
+                changeEdit(parseInt(numberInput.value))
+                selectWinner()
             })
     
             team.push(pokemon)
@@ -84,6 +80,7 @@ pokeForm.addEventListener("submit", event => {
             pokeDiv.setAttribute('class', 'pokemon-objop')
             document.querySelector('#opponent-mon').append(pokeDiv)
         }
+        selectWinner()
     })
     .catch(() => {
         pokeInput.value = ''
@@ -91,12 +88,15 @@ pokeForm.addEventListener("submit", event => {
         pokeInput.removeAttribute('readonly')
         pokeInput.style.borderColor = "red"
     })
-});
+})
 
-document.querySelector("input#team-number").addEventListener('change', (e) => {
-    let size = Math.min(Math.max(e.target.value, 1), 6);
+numberInput.addEventListener("wheel", () => {})
+
+numberInput.addEventListener('change', (e) => {
+    let size = Math.min(Math.max(e.target.value, 1), 6)
     e.target.value = size
     if (team.length >= size){
+        selectWinner()
         team = team.slice(0, size)
     }
     changeEdit(size)
@@ -128,5 +128,52 @@ function updateTeam(){
             poke.id = poke.id.substring(0, poke.id.length - 1) + (i + 1)
             team[i].id = i + 1
         }
+    }
+}
+
+function selectWinner(){
+    if (team.length > 0 && document.querySelector('.pokemon-objop')){
+        let lose = true
+        let tie = 0
+        team.forEach(poke => {
+            if (!lose) {return}
+            let player = 0
+            let oppo = 0
+            poke.types.forEach(e1 => {
+                opponent.types.forEach(e2 => {
+                    let test1 = effect[`${capitalize(e1)}`][`${capitalize(e2)}`]
+                    let test2 = effect[`${capitalize(e2)}`][`${capitalize(e1)}`]
+                    if (e1 != e2 && test1 != test2){
+                        player += test1
+                        oppo += test2
+                    }
+                })
+            })
+            if (player > oppo){
+                lose = false
+                winDiv.innerHTML = `
+                    <p>${poke.name} Wins!</p>
+                    <img src="${poke.image}" alt="${poke.name}">
+                `
+            }else if (player == oppo){
+                tie++
+            }
+        })
+        if (tie == team.length){
+            winDiv.innerHTML = `
+                <p>No Winning Type</p>
+                <img src="https://i.imgflip.com/31q9zg.png" alt="No Winning Type">
+            `
+        }else if (lose){
+            winDiv.innerHTML = `
+                <p>Opponent Wins</p>
+                <img src="${opponent.image}" alt="${opponent.name}">
+            `
+        }
+    }else{
+        winDiv.innerHTML = `
+            <p>No Winning Type</p>
+            <img src="https://i.imgflip.com/31q9zg.png" alt="No Winning Type">
+        `
     }
 }
