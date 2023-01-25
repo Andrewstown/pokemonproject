@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pokemon</title>
-        <link rel="stylesheet" href="stylesheet.css">
-        <script defer type="text/javascript" src="code.js"></script>
-    </head>
 
-    <body>
-        <img id = pokeLogo src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png">
-        <div class="container">
-            <h3 id="select">Select Team</h3>
-            <form id="pokeform">
-                <input type="text" name="pokeInput" placeholder="Type a pokemon name..." class="pokeform-input"/>
-                <button type="submit" class="pokeform-button">GO</button>
-            </form>
+<head>
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script defer type="text/javascript" src="code.js"></script>
+</head>
 
-            <p>Select Team Size</p>
-            <input type="number" value="1" min="1" max="6" id="team-number"> 
-            
-            <h2>Team</h2>
-            <div id="team-list">
+<body>
+    <img src="https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png"></img class="container">
+    <h3 id="select">Select Team</h3>
+    <form id="pokeform">
+        <input type="text" name="pokeInput" placeholder="Type a pokemon name..." class="pokeform-input" />
+        <button type="submit" class="pokeform-button">
+            <span></span>
+        </button>
+    </form>
 
-            </div>
+    <p>Select Team Size</p>
+    <input type="number" value="1" min="1" max="6" id="team-number">
 
-            <h2>Opponent Pokemon</h2>
-            <div id="opponent-mon">
-                
-            </div>
+    <h2>Team</h2>
+    <div id="team-list">
 
-            <h2>Type Advantage</h2>
-            <div id="winning-mon">
-                <div class="pokemon-objwin">
-                    <p>No Winning Type</p>
-                    <img src="https://i.imgflip.com/31q9zg.png" alt="No Winning Type">
-                </div>
-            </div>
-        </div>
-    </body>
+    </div>
+
+    <div id="opponent-mon">
+        <h2>Opponent Pokemon</h2>
+        <!--Make opponent with pokemon creator -->
+    </div>
+
+    <div id="winning-mon">
+        <h2>Winning Pokemon</h2>
+        <!--Make winning with pokemon creator -->
+    </div>
+    </div>
+</body>
+
 </html>
