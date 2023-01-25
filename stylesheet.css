@@ -1,8 +1,3 @@
-h1 {
-    color: rgba(233, 186, 13, 0.563);
-    
-}
-
 img {
     height: 120px;
     margin:auto;
@@ -17,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Pokemon Solid', sans-serif;
+    font-style: italic;
+    font-weight: lighter;
 }
 
 ol {
