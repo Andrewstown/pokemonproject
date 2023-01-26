@@ -42,12 +42,29 @@ input.pokeform-input {
 }
 
 button.pokeform-button {
-    background-image: url(https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png);
+    height: 20px;
+    width: 20px;
+    position:  relative; top: 0px;
+    border: #fafafa;
+    background-color: #fafafa;
+    font-size: larger;
+    font-style: italic;
+    font-weight: lighter;
+    cursor: pointer;
+
+    
+    
+
+}
+button#remove-Btn{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2oBba_0M46Vv0pFTv7VXxcMg7BJxkervhDw&usqp=CAU);
     background-repeat: no-repeat;
     background-size: cover;
     height: 40px;
     width: 40px;
     border: none;
     transition: background-image 0.5s ease;
-    position:  relative; top: 15px
+    position:  relative; top: 0px;
+    cursor: pointer
+    
 }

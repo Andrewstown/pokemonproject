@@ -63,7 +63,9 @@ pokeForm.addEventListener("submit", event => {
 
             const pokeRemove = document.createElement('button')
             pokeRemove.setAttribute('type', 'click')
-            pokeRemove.textContent = "Remove"
+            // pokeRemove.textContent = "Remove"
+            // pokeRemove.style.textAlign = "align-center"
+            pokeRemove.id = 'remove-Btn'
             pokeRemove.addEventListener('click', () => {
                 team.splice(parseInt(pokeDiv.id.charAt(pokeDiv.id.length - 1)) - 1, 1)
                 pokeDiv.remove()
