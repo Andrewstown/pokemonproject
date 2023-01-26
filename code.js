@@ -40,7 +40,7 @@ pokeForm.addEventListener("submit", event => {
         pokeName.textContent = pokemon.name
 
         const pokePic = document.createElement('img')
-        pokePic.setAttribute('src', `${pokemon.image ? pokemon.image : "https://static.wikia.nocookie.net/bec6f033-936d-48c5-9c1e-7fb7207e28af/scale-to-width/755"}`)
+        pokePic.setAttribute('src', `${pokemon.image ? pokemon.image : "https://i.imgflip.com/31q9zg.png"}`)
         pokePic.setAttribute('alt', pokemon.name)
 
         const pokeType = document.createElement('ul')
@@ -162,7 +162,7 @@ function selectWinner(){
         if (tie == team.length){
             winDiv.innerHTML = `
                 <p>No Winning Type</p>
-                <img src="https://i.imgflip.com/31q9zg.png" alt="No Winning Type">
+                <img src="https://static.wikia.nocookie.net/bec6f033-936d-48c5-9c1e-7fb7207e28af/scale-to-width/755" alt="No Winning Type">
             `
         }else if (lose){
             winDiv.innerHTML = `
@@ -173,7 +173,7 @@ function selectWinner(){
     }else{
         winDiv.innerHTML = `
             <p>No Winning Type</p>
-            <img src="https://i.imgflip.com/31q9zg.png" alt="No Winning Type">
+            <img src="https://static.wikia.nocookie.net/bec6f033-936d-48c5-9c1e-7fb7207e28af/scale-to-width/755" alt="No Winning Type">
         `
     }
 }
