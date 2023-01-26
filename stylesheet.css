@@ -1,6 +1,6 @@
 img {
     height: 120px;
-    margin:auto;
+    margin: auto;
 }
 
 body {
@@ -32,6 +32,21 @@ div.pokemon-objwin {
     vertical-align: top;
 }
 
-input.pokeform-input{
+input.pokeform-input {
     border-color: yellow;
+}
+
+#pokeform-button:hover {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png?20161023215848);
+    transition: background-image 0.5s ease;
+}
+
+button.pokeform-button {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png?20161023215848);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    border: none;
+    transition: background-image 0.5s ease;
 }
