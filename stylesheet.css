@@ -4,67 +4,66 @@ img {
 }
 
 body {
-    padding: 1rem;
-    text-align: center;
-    background-color: #fafafa;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
     align-items: center;
     font-family: 'Pokemon Solid', sans-serif;
-    font-style: italic;
     font-weight: lighter;
+    line-height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightyellow;
 }
 
-ol {
-    margin-right: 0;
+.text {
+    color: #004A94;
+    text-shadow: 0px 0px 10px #FFCB08;
+}
+
+.pokeform-input {
+    border-color: yellow;
 }
 
 #team-list {
     position: relative;
 }
 
-div.pokemon-obj,
-div.pokemon-objop,
-div.pokemon-objwin {
-    position: relative;
+.pokemon-obj,
+.pokemon-objop,
+.pokemon-objwin {
     display: inline-block;
-    vertical-align: top;
+    position: relative;
+    vertical-align: center;
 }
 
-input.pokeform-input {
-    border-color: yellow;
+.poke-img {
+    cursor: zoom-in;  
 }
 
-#pokeform-button:hover {
-    background-image: url(https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-PNG-Photo.png);
-    background-image: opacity(255);
-}
-
-button.pokeform-button {
-    height: 20px;
+.pokeform-button {
     width: 20px;
+    border: none;
+    cursor: pointer;
+    height: 20px;
     position:  relative; top: 0px;
-    border: #fafafa;
-    background-color: #fafafa;
     font-size: larger;
     font-style: italic;
     font-weight: lighter;
-    cursor: pointer;
-
-    
-    
-
+    background-color: lightyellow;
 }
-button#remove-Btn{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2oBba_0M46Vv0pFTv7VXxcMg7BJxkervhDw&usqp=CAU);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 40px;
+
+.remove-btn{
     width: 40px;
     border: none;
-    transition: background-image 0.5s ease;
+    cursor: pointer;
+    height: 40px;
     position:  relative; top: 0px;
-    cursor: pointer
-    
+    background-size: cover;
+    background-image: url(https://i.ibb.co/4Wpq91m/open.png);
+    background-repeat: no-repeat;
+    background-color: lightyellow;
+}
+
+.remove-btn:hover {
+    background-image: url(https://i.ibb.co/nfGgrSv/closed.png);
 }
